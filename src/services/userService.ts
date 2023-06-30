@@ -1,12 +1,17 @@
-class UserService {
-  private database = [{ id: '993988' }];
+import { v4 } from 'uuid';
+import { User } from '../models/interfaces/user.interface.js';
 
-  public async getAllUsers() {
+class UserService {
+  private database: User[] = [];
+
+  public async getAllUsers(): Promise<User[]> {
     return this.database;
   }
 
-  public createNewUser() {
-
+  public async createNewUser(user: User): Promise<User> {
+    const newUser = { ...user, id: v4() };
+    this.database = [...this.database, newUser];
+    return newUser;
   }
 }
 
