@@ -13,6 +13,10 @@ class UserService {
     this.database = [...this.database, newUser];
     return newUser;
   }
+
+  public async getUser(userId: string): Promise<User | undefined> {
+    return this.database.find((u) => u.id === userId);
+  }
 }
 
 export const userService = new UserService();

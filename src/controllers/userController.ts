@@ -1,4 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http';
+import { getUserId } from '../utils/getUserId.js';
 import { checkValidUserData } from '../middlewares/checkValidUserData.js';
 import { json } from '../utils/json.js';
 import { userService } from '../services/userService.js';
@@ -32,8 +33,17 @@ class UserController {
       });
   }
 
-  public async getUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
-    console.log('getUser');
+  public async getUser(request: IncomingMessage, response: ServerResponse): Promise<void> {
+    const { url: endpoint } = request;
+    const userId = getUserId(endpoint as string);
+    const user: User | undefined = await userService.getUser(userId);
+
+    if (user) {
+      response.writeHead(200).end(json(user));
+    } else {
+      const error = ApiError.NotFound(messagesError.EXIST);
+      response.writeHead(error.status).end(json(error.message));
+    }
   }
 
   public async updateUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
