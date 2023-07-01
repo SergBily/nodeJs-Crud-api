@@ -85,8 +85,16 @@ class UserController {
       });
   }
 
-  public async deleteUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
-    console.log('deleteUser');
+  public async deleteUser(request: IncomingMessage, response: ServerResponse): Promise<void> {
+    const { url: endpoint } = request;
+    const userId = getUserId(endpoint as string);
+    const deletedUser = await userService.deleteUser(userId);
+    if (deletedUser) {
+      response.writeHead(HttpStatus.no_content).end(json('Record of user is deleted'));
+    } else {
+      const error = ApiError.NotFound(messagesError.EXIST);
+      response.writeHead(error.status).end(json(error.message));
+    }
   }
 }
 

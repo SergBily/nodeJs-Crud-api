@@ -26,6 +26,14 @@ class UserService {
     }
     return findedUser;
   }
+
+  public async deleteUser(userId: string): Promise<User | undefined> {
+    const findedUser: User | undefined = this.database.find((u) => u.id === userId);
+    if (findedUser) {
+      this.database.splice(this.database.indexOf(findedUser), 1);
+    }
+    return findedUser;
+  }
 }
 
 export const userService = new UserService();

@@ -4,4 +4,5 @@ export enum HttpStatus {
   internal_server = 500,
   created = 201,
   ok = 200,
+  no_content = 204,
 }
