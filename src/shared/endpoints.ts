@@ -1,5 +1,5 @@
-import { userController } from '../controllers/userController.js';
-import { Endpoints } from '../models/interfaces/endpoints.interface.js';
+import { userController } from '../controllers/userController';
+import { Endpoints } from '../models/interfaces/endpoints.interface';
 
 export const endpoints: Endpoints = {
   '/api/users': {

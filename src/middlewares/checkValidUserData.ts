@@ -1,4 +1,4 @@
-import { User } from '../models/interfaces/user.interface.js';
+import { User } from '../models/interfaces/user.interface';
 
 export const checkValidUserData = (data: User): User | Error => {
   const { username, age, hobbies } = data;

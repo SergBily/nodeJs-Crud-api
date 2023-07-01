@@ -1,14 +1,14 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { getUserId } from '../utils/getUserId.js';
-import { checkValidUserData } from '../middlewares/checkValidUserData.js';
-import { json } from '../utils/json.js';
-import { userService } from '../services/userService.js';
-import { User } from '../models/interfaces/user.interface.js';
-import { ApiError } from '../exceptions/apiError.js';
-import { messagesError } from '../shared/messagesError.js';
-import { KeysOfMessageError } from '../models/types/keysOfTypes.js';
-import { HttpStatus } from '../models/enum/httpStatus.enum.js';
-import { NameErrors } from '../models/enum/errors.enum.js';
+import { getUserId } from '../utils/getUserId';
+import { checkValidUserData } from '../middlewares/checkValidUserData';
+import { json } from '../utils/json';
+import { userService } from '../services/userService';
+import { User } from '../models/interfaces/user.interface';
+import { ApiError } from '../exceptions/apiError';
+import { messagesError } from '../shared/messagesError';
+import { KeysOfMessageError } from '../models/types/keysOfTypes';
+import { HttpStatus } from '../models/enum/httpStatus.enum';
+import { NameErrors } from '../models/enum/errors.enum';
 
 class UserController {
   public async getAllUsers(_request: IncomingMessage, response: ServerResponse): Promise<void> {

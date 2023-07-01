@@ -1,4 +1,4 @@
-import { regExpId } from '../shared/regExpId.js';
+import { regExpId } from '../shared/regExpId';
 
 export const checkValidUserId = (endpoint: string): boolean | Error => {
   if (endpoint.match(regExpId)) {

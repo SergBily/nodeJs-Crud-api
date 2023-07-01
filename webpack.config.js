@@ -1,15 +1,13 @@
-import { resolve as res } from 'path';
-import url from 'url'
+const path = require('path');
 
-const __dirname = url.fileURLToPath(new URL('.',import.meta.url));
-
-const mode = 'development';
-const entry = './src/index.ts';
-const output = {
+module.exports = {
+  entry: './src/index.ts',
+  target: 'node',
+  output: {
     filename: 'bundle.js',
-    path: res(__dirname, 'dist'),
-};
-const module = {
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
     rules: [
         {
           test: /\.ts?$/,
@@ -17,9 +15,9 @@ const module = {
           exclude: /node_modules/,
         },
       ],
-};
-const resolve = {
-    extensions: ['.ts', '.js'],
-};
-const devtool = 'inline-source-map';
-export default { entry, output, module, resolve, mode, devtool }
+    },
+    resolve: {
+      extensions: ['.ts', '.js'],
+  },
+  devtool: 'inline-source-map'
+}

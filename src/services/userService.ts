@@ -1,5 +1,5 @@
 import { v4 } from 'uuid';
-import { User } from '../models/interfaces/user.interface.js';
+import { User } from '../models/interfaces/user.interface';
 
 class UserService {
   private database: User[] = [];

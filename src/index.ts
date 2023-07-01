@@ -1,7 +1,8 @@
+import dotenv from 'dotenv';
 import { createServer } from 'http';
-import 'dotenv/config';
-import { router } from './router/router.js';
+import { router } from './router/router';
 
+dotenv.config();
 const port = process.env.PORT;
 const server = createServer(router);
 

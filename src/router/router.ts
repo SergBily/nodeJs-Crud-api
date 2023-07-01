@@ -1,14 +1,14 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { typeOfErrors } from '../shared/typeOfErrors.js';
-import { createEndpointId } from '../utils/createEndpointId.js';
-import { checkValidUserId } from '../middlewares/checkValidUserId.js';
-import { messagesError } from '../shared/messagesError.js';
-import { json } from '../utils/json.js';
-import { endpoints } from '../shared/endpoints.js';
-import { KeysOfEndpoints, KeysOfMessageError, KeysOfMethod } from '../models/types/keysOfTypes.js';
-import { ApiError } from '../exceptions/apiError.js';
-import { HttpStatus } from '../models/enum/httpStatus.enum.js';
-import { NameErrors } from '../models/enum/errors.enum.js';
+import { typeOfErrors } from '../shared/typeOfErrors';
+import { createEndpointId } from '../utils/createEndpointId';
+import { checkValidUserId } from '../middlewares/checkValidUserId';
+import { messagesError } from '../shared/messagesError';
+import { json } from '../utils/json';
+import { endpoints } from '../shared/endpoints';
+import { KeysOfEndpoints, KeysOfMessageError, KeysOfMethod } from '../models/types/keysOfTypes';
+import { ApiError } from '../exceptions/apiError';
+import { HttpStatus } from '../models/enum/httpStatus.enum';
+import { NameErrors } from '../models/enum/errors.enum';
 
 export const router = (request: IncomingMessage, response: ServerResponse): void => {
   try {
