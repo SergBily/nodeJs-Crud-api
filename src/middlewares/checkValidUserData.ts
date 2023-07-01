@@ -8,5 +8,5 @@ export const checkValidUserData = (data: User): User | Error => {
     && Array.isArray(hobbies)) {
     return data;
   }
-  throw new Error();
+  throw new Error('REQUIRED');
 };

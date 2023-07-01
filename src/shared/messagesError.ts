@@ -4,4 +4,5 @@ export const messagesError = {
   VALID: 'userId is invalid',
   EXIST_ENDPOINTS: 'the requested resource does not exist',
   SERVER: 'Internal server error, please try again later',
+  TYPE_DATA: 'body is not type \'JSON\'',
 };
