@@ -16,4 +16,8 @@ export class ApiError extends Error {
   static NotFound(message: string) {
     return new ApiError(404, message);
   }
+
+  static dynamicError(status: number, message: string) {
+    return new ApiError(status, message);
+  }
 }

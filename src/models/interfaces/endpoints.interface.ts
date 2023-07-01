@@ -1,5 +1,6 @@
-import { Method } from '../types/method.type.js';
+import { AllUsers, User } from '../types/keysOfTypes.js';
 
 export interface Endpoints {
-  '/api/users': Method;
+  '/api/users': AllUsers;
+  '/api/users/:id': User;
 }

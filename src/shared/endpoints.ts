@@ -6,4 +6,9 @@ export const endpoints: Endpoints = {
     GET: userController.getAllUsers,
     POST: userController.createNewUser,
   },
+  '/api/users/:id': {
+    GET: userController.getUser,
+    PUT: userController.updateUser,
+    DELETE: userController.deleteUser,
+  },
 };

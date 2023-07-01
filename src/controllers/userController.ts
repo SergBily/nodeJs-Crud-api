@@ -31,6 +31,18 @@ class UserController {
         }
       });
   }
+
+  public async getUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
+    console.log('getUser');
+  }
+
+  public async updateUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
+    console.log('updateUser');
+  }
+
+  public async deleteUser(_request: IncomingMessage, response: ServerResponse): Promise<void> {
+    console.log('deleteUser');
+  }
 }
 
 export const userController = new UserController();
