@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-crud-api",
+  "version": "1.0.0",
+  "description": "CRUD api",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development nodemon",
+    "start:prod": "cross-env NODE_ENV=production npm run build && node ./dist/bundle.js",
+    "dev": "npx nodemon",
+    "start": "npm run build && node build/index",
+    "build": "webpack"
+  },
+  "author": "Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.2",
+    "@types/uuid": "^9.0.2",
+    "@types/webpack": "^5.28.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "nodemon": "^2.0.22",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.5",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.0"
+  }
+}
